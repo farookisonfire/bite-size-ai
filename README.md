@@ -41,6 +41,7 @@ Skills operate primarily on local files and context, not external APIs.
 Examples:
 
 ```
+/archive-context
 /plan-post
 /draft-post
 /edit-post
@@ -50,13 +51,16 @@ Examples:
 
 ## Editorial Pipeline
 
-A new article moves through three stages:
+A new article moves through four stages:
 
 ```
-/plan-post [topic]   → posts/plans/plan-<slug>.md
-/draft-post [topic]  → posts/drafts/draft-<slug>.md
-/edit-post [topic]   → posts/final/final-<slug>.md
+/archive-context [topic] → posts/context/context-<slug>.md
+/plan-post [topic]       → posts/plans/plan-<slug>.md
+/draft-post [topic]      → posts/drafts/draft-<slug>.md
+/edit-post [topic]       → posts/final/final-<slug>.md
 ```
+
+`/archive-context` reads the local Substack archive and produces a context brief — noting covered ground, used analogies, established terminology, and gaps. `/plan-post` reads this brief before planning so each new post builds on rather than repeats what's already been published.
 
 ---
 
@@ -87,15 +91,17 @@ The archive is refreshed via the `refresh_article_archive` MCP tool.
 ```
 .claude/
   skills/
-    plan-post.md
-    draft-post.md
-    edit-post.md
+    archive-context/
+    plan-post/
+    draft-post/
+    edit-post/
     references/
       style-guide.md
 
 archive/          ← synced from Substack via MCP
 
 posts/
+  context/        ← archive context briefs
   plans/
   drafts/
   final/

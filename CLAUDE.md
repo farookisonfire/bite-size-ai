@@ -4,23 +4,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-BiteSizeAI is an editorial content platform for making AI concepts accessible. It uses a three-stage skill-based workflow to produce short, clear posts (300–500 words) on modern AI topics.
+BiteSizeAI is an editorial content platform for making AI concepts accessible. It uses a four-stage skill-based workflow to produce short, clear posts (300–500 words) on modern AI topics.
 
 ## Editorial Workflow
 
-Content moves through three stages via Claude Code skills:
+Content moves through four stages via Claude Code skills:
 
 ```
-/plan-post [topic]   → posts/plans/plan-<slug>.md
-/draft-post [topic]  → posts/drafts/draft-<slug>.md
-/edit-post [topic]   → posts/final/final-<slug>.md
+/archive-context [topic] → posts/context/context-<slug>.md
+/plan-post [topic]       → posts/plans/plan-<slug>.md
+/draft-post [topic]      → posts/drafts/draft-<slug>.md
+/edit-post [topic]       → posts/final/final-<slug>.md
 ```
 
 File naming: `<stage>-<lowercase-hyphenated-slug>.md`
 
 ## Skills
 
-- **`/plan-post`** — Identifies the angle, audience, core question, analogy, outline, and 1–3 visual suggestions for a given topic.
+- **`/archive-context`** — Reads the local Substack archive and produces a context brief noting covered ground, used analogies, established terminology, and relevant connections for a given topic.
+- **`/plan-post`** — Reads the context brief (if present) and identifies the angle, audience, core question, analogy, outline, and 1–3 visual suggestions for a given topic.
 - **`/draft-post`** — Reads the plan and writes a full 300–500 word first draft following the style guide.
 - **`/edit-post`** — Reads the draft and polishes for clarity, hook, flow, title, subtitle, and ending.
 

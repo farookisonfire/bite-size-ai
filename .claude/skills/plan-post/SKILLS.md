@@ -2,7 +2,7 @@
 name: plan-post
 description: Turns a BiteSizeAI topic into a clear post architecture with angle, audience, outline, analogy, and suggested visuals, then writes it to a markdown file.
 disable-model-invocation: false
-allowed-tools: Write
+allowed-tools: Read, Write, Glob
 argument-hint: [topic]
 ---
 
@@ -68,6 +68,20 @@ The markdown file must follow this exact structure:
 ## Style Guide
 Before writing, review the style guide: `./references/style-guide.md`
 Follow the editorial voice and writing philosophy described there.
+
+## Archive Context
+
+Before planning, check for an archive context brief:
+
+`posts/context/context-<slug>.md`
+
+If it exists, read it and use it to:
+- Avoid angles or analogies already covered in prior posts
+- Build on established terminology consistently
+- Note relevant connections to prior posts in the plan
+- Identify gaps that make this post distinctive
+
+If no context file exists, proceed without it.
 
 ## Instructions
 
