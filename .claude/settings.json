@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "bitesize-ai": {
+      "command": "node",
+      "args": ["/Users/farookkhan/projects/bite-size-ai/mcp/server.js"],
+      "env": {}
+    }
+  }
+}

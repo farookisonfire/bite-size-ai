@@ -1,0 +1,14 @@
+{
+  "name": "bitesize-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for BiteSizeAI — exposes tools for managing the article archive",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "node-html-markdown": "^1.3.0"
+  }
+}
